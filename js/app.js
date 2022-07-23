@@ -5,7 +5,31 @@ const timerSound = document.querySelector('.timer-sound');
 const timeOut = document.querySelector('.time-out');
 const clickSound = document.querySelector('.click-sound');
 
+
+const deg = 6;
+const hr = document.querySelector("#hr");
+const mn = document.querySelector("#mn");
+const sc = document.querySelector("#sc");
+
+setInterval(() => {
+
+    let day = new Date();
+    let hh = day.getHours() * 30;
+    let mm = day.getMinutes() * deg;
+    let ss = day.getSeconds() * deg;
+
+    hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
+    mn.style.transform = `rotateZ(${mm}deg)`;
+    sc.style.transform = `rotateZ(${ss}deg)`;
+
+    timerSound.play();
+
+}, 1000);
+
+
+
 let count;
+
 
 // timer form
 timer_form.onsubmit = (e) =>{
@@ -20,6 +44,7 @@ timer_form.onsubmit = (e) =>{
     const form_data = new FormData(e.target);
     const {date, time} = Object.fromEntries(form_data.entries());
 
+
     if (!date || !time){
         timer.innerHTML = msgAlert('All feilds are required');
     }
@@ -32,6 +57,7 @@ timer_form.onsubmit = (e) =>{
         }, 1000);
 
     }
+
 
 }
 

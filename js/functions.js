@@ -22,7 +22,6 @@ const countDown = (date, time, text, interval = null , e = null) => {
     //add 1s for delay of intarval when submit
     
     // get value from time
-
     let total_sec = Math.floor(remaining_time / 1000);
     let total_min = Math.floor(total_sec / 60);
     let total_hour = Math.floor(total_min / 60);
@@ -40,8 +39,6 @@ const countDown = (date, time, text, interval = null , e = null) => {
     sec < 10 ? sec = '0' + sec : sec;
 
     text.innerHTML = `<h2>${total_day} D : ${hours} H : ${min} M : ${sec} S</h2>`;
-
-    timerSound.play();
 
     if(total_sec == 0) {
         clearInterval(interval);
