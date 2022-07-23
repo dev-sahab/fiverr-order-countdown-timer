@@ -18,7 +18,8 @@ const countDown = (date, time, text, interval = null , e = null) => {
     let start_time = Date.now();
     let end_time = new Date(date + ' ' + time);
 
-    let remaining_time = Math.floor(Math.abs(end_time.getTime() - start_time))
+    let remaining_time = Math.floor(Math.abs(( end_time.getTime() - start_time + 1000 ))); 
+    //add 1s for delay of intarval when submit
     
     // get value from time
 
