@@ -29,8 +29,6 @@ timer_form.onsubmit = (e) =>{
             
             countDown(date, time, timer, count, e);
 
-            timerSound.play();
-
         }, 1000);
 
     }

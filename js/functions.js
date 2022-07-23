@@ -40,6 +40,8 @@ const countDown = (date, time, text, interval = null , e = null) => {
 
     text.innerHTML = `<h2>${total_day} D : ${hours} H : ${min} M : ${sec} S</h2>`;
 
+    timerSound.play();
+
     if(total_sec == 0) {
         clearInterval(interval);
         text.innerHTML = '<h2>Time Over</h2>';
